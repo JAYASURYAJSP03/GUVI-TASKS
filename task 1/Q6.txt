@@ -1,0 +1,21 @@
+public class HelloWorld {
+    //6) Write a java program to print bellowed pattern ->i and j and k=>5
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter the k value");
+        int k=sc.nextInt();
+        int n=k;
+        for(int i=0;i<k;i++){
+            int m=k;
+            for(int j=0;j<k;j++){
+                if(j>=i) System.out.print(n);
+                else {
+                    System.out.print(m);
+                    m--;
+                }
+            }
+            n--;
+            System.out.println("");
+        }
+    }
+}

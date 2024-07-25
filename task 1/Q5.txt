@@ -1,0 +1,13 @@
+public class HelloWorld {
+    //5) Write a Java program that takes the purchase amount as input and calculates the final payable amount after applying the discount.
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("enter the purchasedAmount");
+        int purchasedAmount=sc.nextInt();
+        if(purchasedAmount<=500) System.out.println("the payable amount is(no discount):"+(purchasedAmount));
+        else if(purchasedAmount>500 && purchasedAmount<=1000){
+            System.out.println("the payable amount is(10% discount):"+(purchasedAmount-(double)(purchasedAmount*10)*0.01));
+        }
+        else System.out.println("the payable amount is(20% discount):"+(purchasedAmount-(double)(purchasedAmount*20)*0.01));
+    }
+}

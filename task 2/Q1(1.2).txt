@@ -1,0 +1,48 @@
+import java.util.Scanner;
+public class Product {
+    //1.2).Create class Product (pid, price, quantity) with parameterized constructor.
+    String pid;
+    int priceOfTheProduct;
+    int quantityOfTheProduct;
+    public Product(String pid,int priceOfTheProduct,int quantityOfTheProduct){
+        this.pid=pid;
+        this.priceOfTheProduct=priceOfTheProduct;
+        this.quantityOfTheProduct=quantityOfTheProduct;
+    }
+}
+class XYZ{
+    //Create a main function in different class (say XYZ) and perform following task:
+    static int totalAmount=0;
+    public static void main(String[] args) {
+        Product product[]=new Product[5];
+        Scanner sc=new Scanner(System.in);
+        int n=1;
+        int highestPrice=0;
+        String highestPricedProduct="";
+        for(int i=0;i<5;i++){
+            //a. Accept five product information from user and store in an array
+            System.out.println("Enter Pid of product "+n+" , Enter price of product "+n+",Enter quantity of product "+n);
+            String pid=sc.next();
+            int price=sc.nextInt();
+            int quantity=sc.nextInt();
+            if(price>highestPrice){
+                //b. Find Pid of the product with the highest price.
+                highestPrice=price;
+                highestPricedProduct=pid;
+            }
+            product[i]=new Product(pid,price,quantity);
+            n++;
+        }
+        System.out.println(totalAmount(product));
+        System.out.println("highest priced product is "+highestPricedProduct+" and its price is "+highestPrice);
+    }
+    public static int totalAmount(Product product[]){
+        //c. Create method (with array of product's object as argument) in XYZ class to
+        //calculate and return the total amount spent on all products. (amount spent on
+        //single product=price of product * quantity of product
+        for(int i=0;i<5;i++){
+            totalAmount+=(product[i].priceOfTheProduct*product[i].quantityOfTheProduct);
+        }
+        return totalAmount;
+    }
+}
