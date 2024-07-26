@@ -20,11 +20,11 @@ public class Employee extends Person{
     }
 
     public static void main(String[] args) {
-        Person p=new Person("jsp",20);
-        p.display();
-        Employee e=new Employee("Jaya Surya Prakash R",21,"JSP@123",50000);
+        Person person=new Person("jsp",20);
+        person.display();
+        Employee employee=new Employee("Jaya Surya Prakash R",21,"JSP@123",50000);
 
-        e.display();
-        p.display();
+        employee.display();
+        person.display();
     }
 }
