@@ -1,0 +1,122 @@
+MENU(ENTER OPTIONS IN CAPITAL LETTERS)
+**************************************
+YOUR OPTIONS ARE!
+--ADD a book 
+--REPLACE a book
+--DISPLAY books
+--CLOSE
+Please select anyone option from here! :
+Add
+Please enter the option correctly
+YOUR OPTIONS ARE!
+--ADD a book 
+--REPLACE a book
+--DISPLAY books
+--CLOSE
+Please select anyone option from here! :
+ADD
+To ADD a book enter the bookID(Integer) , book Title(String) , book Author(String) 
+1001
+To_Kill_a_Mockingbird
+Harper_Lee
+Book added successfully!
+YOUR OPTIONS ARE!
+--ADD a book 
+--REPLACE a book
+--DISPLAY books
+--CLOSE
+Please select anyone option from here! :
+ADD
+To ADD a book enter the bookID(Integer) , book Title(String) , book Author(String) 
+1002
+1984(Book)
+George_Orwell
+Book added successfully!
+YOUR OPTIONS ARE!
+--ADD a book 
+--REPLACE a book
+--DISPLAY books
+--CLOSE
+Please select anyone option from here! :
+ADD
+To ADD a book enter the bookID(Integer) , book Title(String) , book Author(String) 
+1003
+Pride_and_Prejudice
+Jane_Austen
+Book added successfully!
+YOUR OPTIONS ARE!
+--ADD a book 
+--REPLACE a book
+--DISPLAY books
+--CLOSE
+Please select anyone option from here! :
+ADD
+To ADD a book enter the bookID(Integer) , book Title(String) , book Author(String) 
+1004
+The_Great_Gatsby
+F_Scott_Fitzgerald
+Book added successfully!
+YOUR OPTIONS ARE!
+--ADD a book 
+--REPLACE a book
+--DISPLAY books
+--CLOSE
+Please select anyone option from here! :
+ADD
+To ADD a book enter the bookID(Integer) , book Title(String) , book Author(String) 
+1005
+Moby_Dick
+Herman_Melville
+Book added successfully!
+Library is full ,you can't add anymore 
+ Please select other options
+YOUR OPTIONS ARE!
+--REPLACE a book
+--DISPLAY books
+--CLOSE
+Please select anyone option from here! :
+DISPLAY
+Here ! Books and their Availability:
+bookID is : 1001  bookTitle is : To_Kill_a_Mockingbird  bookAuthor is : Harper_Lee  isAvailable is : true
+bookID is : 1002  bookTitle is : 1984(Book)  bookAuthor is : George_Orwell  isAvailable is : true
+bookID is : 1003  bookTitle is : Pride_and_Prejudice  bookAuthor is : Jane_Austen  isAvailable is : true
+bookID is : 1004  bookTitle is : The_Great_Gatsby  bookAuthor is : F_Scott_Fitzgerald  isAvailable is : true
+bookID is : 1005  bookTitle is : Moby_Dick  bookAuthor is : Herman_Melville  isAvailable is : true
+Library is full ,you can't add anymore 
+ Please select other options
+YOUR OPTIONS ARE!
+--REPLACE a book
+--DISPLAY books
+--CLOSE
+Please select anyone option from here! :
+REPLACE
+To REPLACE a book enter the bookID(Integer) , book Title(String) , book Author(String)
+1002
+The_Catcher_in_the_Rye
+J_D_Salinger
+ID matched1002==1002
+Book replaced successfully1
+Library is full ,you can't add anymore 
+ Please select other options
+YOUR OPTIONS ARE!
+--REPLACE a book
+--DISPLAY books
+--CLOSE
+Please select anyone option from here! :
+DISPLAY
+Here ! Books and their Availability:
+bookID is : 1001  bookTitle is : To_Kill_a_Mockingbird  bookAuthor is : Harper_Lee  isAvailable is : true
+bookID is : 1002  bookTitle is : The_Catcher_in_the_Rye  bookAuthor is : J_D_Salinger  isAvailable is : true
+bookID is : 1003  bookTitle is : Pride_and_Prejudice  bookAuthor is : Jane_Austen  isAvailable is : true
+bookID is : 1004  bookTitle is : The_Great_Gatsby  bookAuthor is : F_Scott_Fitzgerald  isAvailable is : true
+bookID is : 1005  bookTitle is : Moby_Dick  bookAuthor is : Herman_Melville  isAvailable is : true
+Library is full ,you can't add anymore 
+ Please select other options
+YOUR OPTIONS ARE!
+--REPLACE a book
+--DISPLAY books
+--CLOSE
+Please select anyone option from here! :
+CLOSE
+
+Process finished with exit code 0

@@ -1,0 +1,135 @@
+package BookManagementSystem;
+
+import java.util.Scanner;
+//  Management System
+//  1.Design a Java program that uses OOP principles to model the Book .Create two classes: Book
+//  and Library. The Book class should have attributes such as booklD, title, author, and isAvailable.
+//  The Library class should include an array to store book objects.
+//  2.Provide methods to add books , remove book search books (using id)and display books.
+//  Write a Java program that demonstrates the use of these classes and methods by allowing the
+//  user to interact with the library system.
+
+class Book{
+    protected int bookID;
+    protected String title;
+    protected String author;
+    protected boolean isAvailable=false;
+    public Book(int bookID,String title,String author){
+        this.bookID=bookID;
+        this.title=title;
+        this.author=author;
+        this.isAvailable=true;
+    }
+    public int getBookId(){
+        return bookID;
+    }
+    public String getTitle(){
+        return title;
+    }
+    public String getAuthor(){
+        return author;
+    }
+    public boolean getIsAvailable(){
+        return isAvailable;
+    }
+    public void setBookId(int bookID){
+        this.bookID=bookID;
+    }
+    public void setTitle(String title){
+        this.title=title;
+    }
+    public void setAuthor(String author){
+        this.author=author;
+    }
+    public void setIsAvailable(boolean isAvailable){
+        this.isAvailable=isAvailable;
+    }
+}
+class Library{
+    int i=0;
+    private Book book[];
+    public Library(){
+        book=new Book[5];
+    }
+    public void addBook(Book book){
+        this.book[i]=book;
+        i++;
+    }
+    public void replaceBook(int bookId,String title,String author){
+        for(int i=0;i<5;i++){
+            if(book[i].bookID==bookId){
+                System.out.println("ID matched"+book[i].bookID+"=="+bookId);
+                book[i].title=title;
+                book[i].author=author;
+                book[i].isAvailable=true;
+                break;
+            }
+        }
+    }
+    public void displayBooks(int a){
+        for(int i=0;i<a;i++){
+            System.out.println("bookID is : "+book[i].getBookId()+"  bookTitle is : "+book[i].getTitle()+"  bookAuthor is : "+book[i].getAuthor()+"  isAvailable is : "+book[i].getIsAvailable());
+
+        }
+    }
+}
+public class BookManagementSystem {
+    public static void main(String []args){
+        Library lib=new Library();
+        System.out.println("MENU(ENTER OPTIONS IN CAPITAL LETTERS)");
+        System.out.println("**************************************");
+        Scanner sc =new Scanner(System.in);
+        for (int i=0;i<6;i++){
+            if(i==5) {
+                System.out.println("Library is full ,you can't add anymore \n Please select other options");
+                System.out.println("YOUR OPTIONS ARE!");
+                System.out.println("--REPLACE a book");
+                System.out.println("--DISPLAY books");
+                System.out.println("--CLOSE");
+                System.out.println("Please select anyone option from here! :");
+                String menu=sc.next();
+                if(menu.equalsIgnoreCase("CLOSE")) break;
+                switch(menu){
+                    case "REPLACE": System.out.println("To REPLACE a book enter the bookID(Integer) , book Title(String) , book Author(String)");
+                        lib.replaceBook(sc.nextInt(),sc.next(),sc.next());
+                        System.out.println("Book replaced successfully1");
+                        break;
+                    case "DISPLAY": System.out.println("Here ! Books and their Availability:");
+                        lib.displayBooks(i);
+                        break;
+                    default: System.out.println("Please enter the option correctly");
+                             break;
+
+                }
+
+                --i;
+            }
+            else{
+                System.out.println("YOUR OPTIONS ARE!");
+                System.out.println("--ADD a book ");
+                System.out.println("--REPLACE a book");
+                System.out.println("--DISPLAY books");
+                System.out.println("--CLOSE");
+                System.out.println("Please select anyone option from here! :");
+                String menu=sc.next();
+                if(menu.equalsIgnoreCase("CLOSE")) break;
+                switch(menu){
+                    case "ADD": System.out.println("To ADD a book enter the bookID(Integer) , book Title(String) , book Author(String) ");
+                        lib.addBook(new Book(sc.nextInt(),sc.next(),sc.next()));
+                        System.out.println("Book added successfully!");
+                        break;
+                    case "REPLACE": System.out.println("To REPLACE a book enter the bookID(Integer) , book Title(String) , book Author(String)");
+                        lib.replaceBook(sc.nextInt(),sc.next(),sc.next());i--;
+                        System.out.println("Book replaced successfully1");
+                        break;
+                    case "DISPLAY": System.out.println("Here ! Books and their Availability:");
+                        lib.displayBooks(i);i--;
+                        break;
+                    default: System.out.println("Please enter the option correctly");--i;
+                        break;
+                }
+            }
+        }
+    }
+
+}
