@@ -15,10 +15,10 @@ class Book{
     protected String author;
     protected boolean isAvailable=false;
     public Book(int bookID,String title,String author){
-        this.bookID=bookID;
-        this.title=title;
-        this.author=author;
-        this.isAvailable=true;
+        setBookId(bookID);
+        setTitle(title);
+        setAuthor(author);
+        setIsAvailable(true);
     }
     public int getBookId(){
         return bookID;
@@ -67,9 +67,12 @@ class Library{
         }
     }
     public void displayBooks(int a){
-        for(int i=0;i<a;i++){
-            System.out.println("bookID is : "+book[i].getBookId()+"  bookTitle is : "+book[i].getTitle()+"  bookAuthor is : "+book[i].getAuthor()+"  isAvailable is : "+book[i].getIsAvailable());
+        if(a==0) System.out.println("Library is empty , first add something to display  ");
+        else {
+            for(int i=0;i<a;i++){
+                System.out.println("bookID is : "+book[i].getBookId()+"  bookTitle is : "+book[i].getTitle()+"  bookAuthor is : "+book[i].getAuthor()+"  isAvailable is : "+book[i].getIsAvailable());
 
+            }
         }
     }
 }
@@ -98,7 +101,7 @@ public class BookManagementSystem {
                         lib.displayBooks(i);
                         break;
                     default: System.out.println("Please enter the option correctly");
-                             break;
+                        break;
 
                 }
 
