@@ -1,0 +1,56 @@
+package Taxable;
+
+//  2.Create Interface Taxable with members salesTax=7% and incomeTax=10.5%. create
+//  abstract method calcTax().
+//  a. Create class Employee(empld,name,salary) and implement Taxable to calculate
+//  incomeTax on yearly salary.
+//  b. Create class Product(pid,price,quantity) and implement Taxable to calculate
+//  salesTax on unit price of product.
+//  c. Create class for main method(Say DriverMain), accept employee information and a
+//  product information from user and print income tax and sales tax respectively
+
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
+interface Taxable{
+    double salseTax=7;
+    double incomeTax=10.5;
+    abstract void clacTax();
+}
+class Employee implements Taxable{
+    String  empId;
+    String name;
+    double salary;
+    public void clacTax(){
+        double tax=salary*(incomeTax/100);
+        System.out.println(" For this Employee ID :"+empId+"\n Employee name : "+name+"\n The incomeTax for his salary is 10.5% which is "+tax+" for "+salary+" and his inhand salary is :"+(salary-tax));
+    }
+}
+class Product implements Taxable{
+    String pId;
+    double price;
+    int quantity;
+    public void clacTax(){
+        double tax=(price*quantity)*(salseTax/100);
+        System.out.println(" For the product :"+pId+"\n the actual amount without tax is (price X quantity) :"+(price*quantity)+"\n your tax is 7% of "+(price*quantity)+" is "+tax+" and the amount you have to pay is : "+(tax+(price*quantity)));
+    }
+}
+public class DriverMain {
+    public static void main(String[] args) {
+        Employee employee=new Employee();
+        Product product=new Product();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("First enter employee details: \n1) employeeID  \n2) employeeName  \n3) employeeSalary (per annum) ");
+        employee.empId=sc.nextLine();
+        employee.name=sc.nextLine();
+        employee.salary =sc.nextDouble();
+        sc.nextLine();  // to consume new line character"\n"(buffer)
+        System.out.println("Enter product details : \n1) productID\n2) price\n3) quantity ");
+        product.pId=sc.nextLine();
+        product.price=sc.nextDouble();
+        product.quantity=sc.nextInt();
+        employee.clacTax();
+        product.clacTax();
+
+    }
+}

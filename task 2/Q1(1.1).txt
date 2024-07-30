@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Person {
     //1.1)Create a class Person with properties (name and age) with following features.
 
@@ -11,8 +13,11 @@ public class Person {
     public static void main(String[] args) {
         Person person=new Person();
         //b. A person object can be initialized with name and age;
-        person.age=21;
-        person.name="JAYA SURYA PRAKASH R";
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter person's name and age :");
+
+        person.name=sc.nextLine();
+        person.age=sc.nextInt();
         person.display();
     }
 

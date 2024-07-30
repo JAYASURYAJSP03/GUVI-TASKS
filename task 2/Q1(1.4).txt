@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Person {
     //1.4) Define a base class Person with attributes name and age.
     static String name;
@@ -23,16 +25,17 @@ class Employee extends Person{
         this.salary=salary;
     }
     public void display(){
-        System.out.println("person name:"+name);
-        System.out.println("person age:"+age);
+        super.display();
         System.out.println("employee ID:"+employeeID);
         System.out.println("employee salary:"+salary);
     }
 
     public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
         Person person=new Person("jsp",20);
         person.display();
-        Employee employee=new Employee("Jaya Surya Prakash R",21,"JSP@123",50000);
+        System.out.println("Enter the person name, age , employeeID ,salary :");
+        Employee employee=new Employee(sc.nextLine(),sc.nextInt(),sc.next(),sc.nextDouble());
 
         employee.display();
         person.display();
