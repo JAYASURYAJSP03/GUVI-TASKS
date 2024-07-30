@@ -19,8 +19,11 @@ public class Account {
     }
     public void withdraw(int amount){
         //b.method to withdraw the amount from the account .
-        this.balance-=amount;
-        System.out.println("your available balance after withdraw is:"+balance);
+        if(amount>balance) System.out.println("Error : insufficient fund! your current balance is :"+balance);
+        else{
+            this.balance-=amount;
+            System.out.println("your available balance after withdraw is:"+balance);
+        }
     }
     public void checkBalance(){
         //c.method to display the Balance .
