@@ -1,0 +1,65 @@
+import java.util.*;
+
+//Q4. Create a HashMap where keys are student names (strings) and values are their
+//corresponding grades (integers). Create methods to add a new student, remove a
+//student, and Display up a student's grade by name.
+public class HashMapDemo {
+    HashMap<String ,Integer > hashMap=new HashMap<>();
+    public void add(String name,Integer grade){
+        hashMap.put(name,grade);
+        System.out.println("Student details are updated!");
+    }
+    public void remove(String name,Integer grade){
+        System.out.print("Is the student details removed :");
+        System.out.println(hashMap.remove(name,grade));
+
+    }
+    public void replace(String name,Integer gradeOld,Integer gradeNew){
+        System.out.print("Is the student details replaced :");
+        System.out.println(hashMap.replace(name,gradeOld,gradeNew));
+
+    }
+    public void display(){
+        if(hashMap.size()==0) System.out.println("This is Empty please add some details to show!");
+        else{
+            Set<Map.Entry<String,Integer>> set=hashMap.entrySet();
+            Iterator iterator=set.iterator();
+            while (iterator.hasNext()){
+                Map.Entry entry=(Map.Entry) iterator.next();
+                System.out.println("Student "+entry.getKey()+" has got "+entry.getValue()+" marks.");
+            }
+        }
+    }
+    public static void main(String[] args) {
+        HashMapDemo hashMapDemo=new HashMapDemo();
+        Scanner sc=new Scanner(System.in);
+        do{
+            System.out.println("Enter any option :\n1) add,\n2) remove,\n3) replace,\n4) display,\n5) close.");
+            String option=sc.next();
+            if(option.equals("close")) break;
+            switch (option){
+                case "add":
+                    System.out.println("Enter nameOfTheStudent(string) and gradeOfTheStudent(int) to add");
+                    sc.nextLine();//to consume the new line character"\n"
+                    String name1=sc.nextLine();
+                    hashMapDemo.add(name1,sc.nextInt());break;
+                case "replace":
+                    System.out.println("Enter nameOfTheStudent(string) and oldGradeOfTheStudent(int) and newGradeOfTheStudent(int) to replace");
+                    sc.nextLine();//to consume the new line character"\n"
+                    String name2=sc.nextLine();
+                    hashMapDemo.replace(name2,sc.nextInt(), sc.nextInt());break;
+                case "remove":
+                    System.out.println("Enter nameOfTheStudent(string) and gradeOfTheStudent(int) to remove");
+                    sc.nextLine();//to consume the new line character"\n"
+                    String name3=sc.nextLine();
+                    hashMapDemo.remove(name3, sc.nextInt());break;
+                case "display":
+                    System.out.println("Here! Students name and their grades");
+                    hashMapDemo.display();break;
+                default:
+                    System.out.println("Enter the option correctly!");break;
+            }
+
+        }while (true);
+    }
+}

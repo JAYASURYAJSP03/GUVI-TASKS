@@ -1,0 +1,60 @@
+import java.util.Scanner;
+//Q2. Create a class Voter(voterld, name, age) with parameterized constructor. The
+//parameterized constructor should throw a checked exception if age is less than 18.
+//The message of exception is "invalid age for voter
+class InvalidAgeForVoteException extends Exception{
+    public String toString(){
+        return "invalid age for voter";
+    }
+}
+
+public class Voter{
+    private String name;
+    private int age;
+    private String voterId;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getVoterId() {
+        return voterId;
+    }
+
+    public void setVoterId(String voterId) {
+        this.voterId = voterId;
+    }
+
+    public Voter(String name, int age, String voterId)throws InvalidAgeForVoteException{
+        if(age<18) throw new InvalidAgeForVoteException();
+        else{
+            System.out.println("you are eligible for vote!");
+            setAge(age);
+            setVoterId(voterId);
+            setName(name);
+        }
+    }
+
+    public static void main(String[] args) {
+        System.out.println("1) Enter name :\n2) Enter age :\n3) Enter voterIdNo :");
+        Scanner sc=new Scanner(System.in);
+        try {
+            Voter voter=new Voter(sc.nextLine(),sc.nextInt(),sc.next());
+        }
+        catch (InvalidAgeForVoteException e){
+            System.out.println(e);
+        }
+    }
+}

@@ -1,0 +1,64 @@
+import java.util.Iterator;
+import java.util.Scanner;
+import java.util.Stack;
+
+//Q5. Use Collection Classes to store Integers .Create some methods for following
+//functionalities .
+//a. Include functions for pushing elements onto the stack .
+//b. popping elements from the stack .
+//c. checking if the stack is empty.
+public class StackDemo {
+    Stack<Integer> stack=new Stack<>();
+    public void push(int a){
+        stack.push(a);
+        System.out.println("Element is added!");
+    }
+    public Integer pop(){
+        return stack.pop();
+    }
+    public Integer peek(){
+
+        return stack.peek();
+    }
+    public boolean isEmpty(){
+        return stack.empty();
+    }
+    public void display(){
+        Iterator<Integer> iterator=stack.iterator();
+        while(iterator.hasNext()){
+            System.out.println(iterator.next());
+        }
+    }
+    public static void main(String[] args) {
+        StackDemo stack=new StackDemo();
+        Scanner sc=new Scanner(System.in);
+        do{
+            System.out.println("Enter any option :\n1) push\n2) pop\n3) isEmpty\n4) peek\n5) display \n6) close");
+            String option =sc.next();
+            if(option.equals("close")){
+                System.out.println("The stack is closed!");
+                break;
+            }
+            switch (option){
+                case "push":
+                    System.out.println("Enter the element to add :");
+                    stack.push(sc.nextInt());break;
+                case "pop":
+                    System.out.println("Last element will be removed!");
+                    System.out.println(stack.pop());System.out.println("This element removed!");break;
+                case "peek":
+                    System.out.println("The Last element is :");
+                    System.out.println(stack.peek());System.out.println("This is the peek element!");break;
+                case "isEmpty":
+                    System.out.println("Is the stack empty?");
+                    System.out.println(stack.isEmpty()); break;
+                case "display":
+                    System.out.println("Here! what is inside the stack:");
+                    stack.display();break;
+                default:
+                    System.out.println("Enter the option correctly!");
+                    break;
+            }
+        }while(true);
+    }
+}

@@ -1,0 +1,96 @@
+import java.sql.SQLOutput;
+import java.util.Scanner;
+
+//QI. Ramesh is developing a student management system for a university. In this
+//system, you have a Student class to represent student information. You are asked
+//to help Ramesh to handle exception which can be occurred into program
+//according to following Scenarios:
+//class Student with attributes roll no, name, age and course. Initialize values
+//through parameterized constructor.
+//If the age of the student is not between 15 and 21 then generate a
+//user-defined exception "AgeNotWithinRangeException".
+//If a name contains numbers or special symbols, raise exception
+//"NameNotValidException". Define the two exception classes.
+class NameNotValidException extends Exception{
+    public NameNotValidException(String str){
+        super(str);
+    }
+}
+
+class AgeNotWithinRangeException extends Exception{
+    public AgeNotWithinRangeException(String str){
+        super(str);
+    }
+}
+class Student {
+    private long rollNo;
+    private String name;
+    private int age;
+    private String courses[];
+    public Student(long rollNo,String name,int age,String courses[])throws AgeNotWithinRangeException,NameNotValidException{
+        if(name.matches("^[A-Za-z\\s'-.]+$")) {
+            if(age<15||age>21) throw new AgeNotWithinRangeException("Invalid age! age should between (15-21)");
+            else{
+                System.out.println("Student details added successfully!");
+                setAge(age);
+                setRollNo(rollNo);
+                setName(name);
+                setCourses(courses);
+            }
+        }
+        else{
+            throw new NameNotValidException("Enter a proper name(don't use special characters or numbers)");
+        }
+    }
+    public long getRollNo(){
+        return rollNo;
+    }
+    public String getName(){
+        return name;
+    }
+    public int getAge(){
+        return age;
+    }
+    public String[] getCourses(){
+        return courses;
+    }
+    public void setRollNo(long rollNo){
+        this.rollNo=rollNo;
+    }
+    public void setName(String name){
+        this.name=name;
+    }
+    public void setAge(int age){
+        this.age=age;
+    }
+    public void setCourses(String courses[]){
+        this.courses=courses;
+    }
+}
+class StudentManagementSystem{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println(" 1) Enter RollNo :\n 2) Enter Name : \n 3) Enter Age :\n 4) Enter how many courses do you have :");
+        long rollNo=sc.nextLong();
+        sc.nextLine();
+        String name=sc.nextLine();
+
+        int age= sc.nextInt();
+        int noOfCourses=sc.nextInt();
+        sc.nextLine();
+        String courses[]=new String[noOfCourses];
+        for(int i=0;i<noOfCourses;i++){
+            System.out.println("Enter the name of course "+(i+1));
+            courses[i]=sc.nextLine();
+        }
+        try {
+            Student student=new Student(rollNo,name,age,courses);
+        }
+        catch (NameNotValidException e){
+            System.out.println(e);
+        }
+        catch (AgeNotWithinRangeException e){
+            System.out.println(e);
+        }
+    }
+}
