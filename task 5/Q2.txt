@@ -1,0 +1,20 @@
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.*;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
+
+class GuviTask5_2{
+    //2. Write a program to check whether the Strings in the List are empty or not and print the
+    //list having non-empty strings. If the given List is: Liststrings = Arrays.asList("abc","","bc" ,"efg","abcd","","jkl");
+    public static void main(String[] args) {
+        List<String> stringList= Arrays.asList("abc","","bc" ,"efg","abcd","","jkl");
+
+        Predicate<String> predicate=words->words.length()==0;
+
+        stringList.stream().forEach(isEmpty-> System.out.println("Is the word empty ? "+predicate.test(isEmpty)));
+
+        stringList.stream().filter(words->words.length()>0).forEach(System.out::println);
+    }
+}

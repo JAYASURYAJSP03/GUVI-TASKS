@@ -1,0 +1,37 @@
+import java.time.LocalDate;
+import java.time.Period;
+import java.util.*;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.stream.Stream;
+
+class GuviTask5_4{
+    //4.Rajesh has been given a task to create an app which takes the user's birthdate as input
+    //and calculates their age , you have to help him to build this app using the
+    //java.time.LocalDate class.
+    //Input :
+    //Enter your birthdate (yyyy-mm-dd): 1990-05-15
+    //Output :
+    //Your age is: 33 years, 4 months, and 13 days.
+    public static void main(String[] args) {
+        System.out.println("Enter your DOB (yyyy-mm-dd)");
+        Scanner sc=new Scanner(System.in);
+        String DOB[]=sc.nextLine().split("-");
+        LocalDate birthDate= LocalDate.of(Integer.parseInt(DOB[0]),Integer.parseInt(DOB[1]),Integer.parseInt(DOB[2]));
+        LocalDate currentDate=LocalDate.now();
+        System.out.println("Your age is :"+yearCaoulator(birthDate,currentDate)+" years "+monthCaoulator(birthDate,currentDate)+" months "+dayCaoulator(birthDate,currentDate)+" days");
+    }
+    public static int yearCaoulator(LocalDate birthDate, LocalDate currentDate){
+        Period period=Period.between(birthDate,currentDate);
+        return period.getYears();
+    }
+    public static int monthCaoulator(LocalDate birthDate, LocalDate currentDate){
+        Period period=Period.between(birthDate,currentDate);
+        return period.getMonths();
+    }
+    public static int dayCaoulator(LocalDate birthDate, LocalDate currentDate){
+        Period period=Period.between(birthDate,currentDate);
+        return period.getDays();
+    }
+
+}
