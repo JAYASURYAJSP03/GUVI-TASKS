@@ -1,7 +1,7 @@
 import java.sql.SQLOutput;
 import java.util.Scanner;
 
-//QI. Ramesh is developing a student management system for a university. In this
+//Q1. Ramesh is developing a student management system for a university. In this
 //system, you have a Student class to represent student information. You are asked
 //to help Ramesh to handle exception which can be occurred into program
 //according to following Scenarios:
@@ -12,12 +12,16 @@ import java.util.Scanner;
 //If a name contains numbers or special symbols, raise exception
 //"NameNotValidException". Define the two exception classes.
 class NameNotValidException extends Exception{
+    //If a name contains numbers or special symbols, raise exception
+    //"NameNotValidException". Define the two exception classes.
     public NameNotValidException(String str){
         super(str);
     }
 }
 
 class AgeNotWithinRangeException extends Exception{
+    //If the age of the student is not between 15 and 21 then generate a
+    //user-defined exception "AgeNotWithinRangeException".
     public AgeNotWithinRangeException(String str){
         super(str);
     }
@@ -28,6 +32,8 @@ class Student {
     private int age;
     private String courses[];
     public Student(long rollNo,String name,int age,String courses[])throws AgeNotWithinRangeException,NameNotValidException{
+        //class Student with attributes roll no, name, age and course. Initialize values
+        //through parameterized constructor.
         if(name.matches("^[A-Za-z\\s'-.]+$")) {
             if(age<15||age>21) throw new AgeNotWithinRangeException("Invalid age! age should between (15-21)");
             else{

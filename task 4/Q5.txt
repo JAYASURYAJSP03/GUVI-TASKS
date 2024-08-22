@@ -9,11 +9,16 @@ import java.util.Stack;
 //c. checking if the stack is empty.
 public class StackDemo {
     Stack<Integer> stack=new Stack<>();
+    //Use Collection Classes to store Integers Create some methods for following functionalities .
     public void push(int a){
+        //a. Include functions for pushing elements onto the stack .
+        
         stack.push(a);
         System.out.println("Element is added!");
     }
+    
     public Integer pop(){
+        //b. popping elements from the stack .
         return stack.pop();
     }
     public Integer peek(){
@@ -21,6 +26,8 @@ public class StackDemo {
         return stack.peek();
     }
     public boolean isEmpty(){
+        //c. checking if the stack is empty.
+        
         return stack.empty();
     }
     public void display(){

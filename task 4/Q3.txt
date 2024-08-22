@@ -12,7 +12,9 @@ class ArrayIndexOutOfBoundsException extends Exception{
 public class Weekdays {
     public void Weekdays(int i)throws ArrayIndexOutOfBoundsException{
         String weekDaysArr[]={"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"};
+        //Store name of weekdays in an array (starting from "Sunday" at 0 index).
         if(i<0||i>6) throw new ArrayIndexOutOfBoundsException();
+        //Handle array index out of bound exception and give proper message if user enters day index outside range (0-6).
         else System.out.println(weekDaysArr[i]);
     }
 
@@ -20,6 +22,7 @@ public class Weekdays {
         Weekdays weekdays=new Weekdays();
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter a weekday number :");
+        // Ask day position from user and print day name
         int i=sc.nextInt();
         try{
             weekdays.Weekdays(i);

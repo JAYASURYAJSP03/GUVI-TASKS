@@ -14,9 +14,18 @@ class  GuviTask5_3{
     //Use a lambda expression and the Stream API to filter the students
     public static void main(String[] args) {
         List<String > studentsName=new ArrayList<>(List.of("Aravind","Bala","Sooraj","Akash","Bharani","Madhavan","Andrew","pownraj","Ashwin","Akshaya"));
+   	 //Requirement:
+   	 //Use List interface to store the student name
+
         Predicate<String> function=names-> names.startsWith("A");
+	//you have decided to give
+  	//special gifts to those students whose names start with "A".you are asked to separate those
+    	//students with the help of a java program .
+
         studentsName.forEach(names-> System.out.println("Is " +names+" starts with 'A' : "+function.test(names)));
         System.out.println("Students,Those who are selected for gifts!");
         studentsName.stream().filter(name->name.startsWith("A")).forEach(System.out::println);
+   	 //Use a lambda expression and the Stream API to filter the students
+
     }
 }

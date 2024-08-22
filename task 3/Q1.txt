@@ -1,7 +1,8 @@
 package BookManagementSystem;
 
 import java.util.Scanner;
-//  Management System
+//  Library Management System
+//Create two classes: Book and Library.
 //  1.Design a Java program that uses OOP principles to model the Book .Create two classes: Book
 //  and Library. The Book class should have attributes such as booklD, title, author, and isAvailable.
 //  The Library class should include an array to store book objects.
@@ -10,10 +11,12 @@ import java.util.Scanner;
 //  user to interact with the library system.
 
 class Book{
+    //Create two classes: Book and Library.
     protected int bookID;
     protected String title;
     protected String author;
     protected boolean isAvailable=false;
+    //The Book class should have attributes such as booklD, title, author, and isAvailable.
     public Book(int bookID,String title,String author){
         setBookId(bookID);
         setTitle(title);
@@ -46,16 +49,22 @@ class Book{
     }
 }
 class Library{
+    //Create two classes: Book and Library.
+    
     int i=0;
     private Book book[];
     public Library(){
+        //  The Library class should include an array to store book objects.
         book=new Book[5];
     }
     public void addBook(Book book){
+        //  The Library class should include an array to store book objects.
+        //Provide methods to add books , remove book search books (using id)and display books.
         this.book[i]=book;
         i++;
     }
     public void replaceBook(int bookId,String title,String author){
+        //Provide methods to add books , remove book search books (using id)and display books.
         for(int i=0;i<5;i++){
             if(book[i].bookID==bookId){
                 System.out.println("ID matched"+book[i].bookID+"=="+bookId);
@@ -67,6 +76,7 @@ class Library{
         }
     }
     public void displayBooks(int a){
+        //Provide methods to add books , remove book search books (using id)and display books.
         if(a==0) System.out.println("Library is empty , first add something to display  ");
         else {
             for(int i=0;i<a;i++){
@@ -78,6 +88,8 @@ class Library{
 }
 public class BookManagementSystem {
     public static void main(String []args){
+        //Write a Java program that demonstrates the use of these classes and methods by allowing the
+        //  user to interact with the library system.
         Library lib=new Library();
         System.out.println("MENU(ENTER OPTIONS IN CAPITAL LETTERS)");
         System.out.println("**************************************");

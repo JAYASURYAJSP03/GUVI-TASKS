@@ -5,16 +5,22 @@ import java.util.*;
 //student, and Display up a student's grade by name.
 public class HashMapDemo {
     HashMap<String ,Integer > hashMap=new HashMap<>();
+    //Create a HashMap where keys are student names (strings) and values are their corresponding grades (integers).
     public void add(String name,Integer grade){
+        //Create methods to add a new student, remove a student, and Display up a student's grade by name.
         hashMap.put(name,grade);
         System.out.println("Student details are updated!");
     }
     public void remove(String name,Integer grade){
+        //Create methods to add a new student, remove a student, and Display up a student's grade by name.
+
         System.out.print("Is the student details removed :");
         System.out.println(hashMap.remove(name,grade));
 
     }
     public void replace(String name,Integer gradeOld,Integer gradeNew){
+        //Create methods to add a new student, remove a student, and Display up a student's grade by name.
+
         System.out.print("Is the student details replaced :");
         System.out.println(hashMap.replace(name,gradeOld,gradeNew));
 

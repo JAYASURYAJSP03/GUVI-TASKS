@@ -10,8 +10,11 @@ public class GuviTask5_1 {
     //given List is: Stream names = Stream.of("aBc", "d", "ef');
     public static void main(String[] args) {
         Stream<String> stringStream=Stream.of("aBc", "d", "ef");
+	//lf the given List is: Stream names = Stream.of("aBc", "d", "ef');
+
         Function<String,String> stringFunction=words->words.toUpperCase();
         System.out.println("Strings are changed to upperCase!");
+	//Write a program using map() method,to convert a list of Strings into uppercase.
         stringStream.map(stringFunction).forEach(result-> System.out.println(result));
     }
 }
