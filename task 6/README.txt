@@ -1,3 +1,9 @@
+Here I attached deployed url Link 
+
+
+Here I attached Task 6's files repo Link
+
+
 Here I attached video of the 6th task's results
 
 
